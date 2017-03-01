@@ -81,10 +81,10 @@ foreach ($dirfiles as $d1) {
 <?xml version="1.0" encoding="UTF-8"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" version="3.5">
   <identifier type="local">$ident</identifier>
-  <mods:titleInfo>
-    <mods:title>$booktitle</mods:title>
-  </mods:titleInfo>
-</mods:mods>
+  <titleInfo>
+    <title>$booktitle</title>
+  </titleInfo>
+</mods>
 EOL;
       // switch contexts to fix syntax highlighting
       ?>
