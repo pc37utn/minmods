@@ -4,7 +4,7 @@
  * minimgmods.php
  * 20170301
  * use a list of tif file names to make minimum mods for ingestion
- * result should have a tifname.mods which has two fields
+ * result should have a (tif imagefile name).xml which has two fields
  * - an identifer with filename in it and a title with filename in it
  * - this will prepare for a islandora_batch drush ingest
  * 20170301
