@@ -66,20 +66,20 @@ foreach ($dirfiles as $d1) {
   // eliminate the dot directories
   if (($d1=='.')||($d1=='..')) continue;
   if (!is_dir($d1)) {
-    // limit to tif or jp2 name
-    // this ignores other files, so a final step
-    // might be to copy this directory using filters
-    $d1=trim($d1);
-    $xmlname=$d1.'.xml';
+    $end = substr($d1, -4);
+    if ()($end=='.tif')||($end=='.jp2')) {
+      // get basename
+      $xbase=basename($d1,$end);
+      $xmlname=$xbase.'.xml';
     if (!file_exists($xmlname)) { // create mods file
       // get title and identifier specific to this image
       /*
       * could also pull in a template file here to set known values
       */
-      $title=$d1;
+      $title=$xbase;
       $ident=$xmlname;
       // encode entities
-      $itle=htmlentities($title,ENT_QUOTES,'UTF-8');
+      $title=htmlentities($title,ENT_QUOTES,'UTF-8');
       $ident=htmlentities($ident,ENT_QUOTES,'UTF-8');
       // make mods.xml
       $pagexml=<<<EOL
