@@ -19,7 +19,8 @@ Copy into /usr/local/bin and change name to minmods ( or in the image script cas
 Change permissions to 755.
 
 ## Usage
-###minmods
+
+### minmods
 
 For a book type directory, where the main directory is the collection name/namespace, with the items as separate directories beneath it:
 
@@ -28,4 +29,4 @@ For a book type directory, where the main directory is the collection name/names
 
 ### minimgmods
 
-For the minimgmods script, a directory has a number of image files and this makes MODS records to match the image file names by using the base file name for the title, identifier and file name of the MODS. This also does not overwrite metadata files that are already there.
+For the minimgmods script, a directory has a number of image files and this makes MODS records to match the image file names by using the base file name for the title, identifier and file name of the MODS.
