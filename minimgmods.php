@@ -64,25 +64,27 @@ chdir($rdir);
 $dirfiles = scandir(".");
 foreach ($dirfiles as $d1) {
   // eliminate the dot directories
-  if (($d1=='.')||($d1=='..')) continue;
+  if (($d1 == '.') || ($d1 == '..')) {
+    continue;
+  }
   if (!is_dir($d1)) {
     $end = substr($d1, -4);
-    if ()($end=='.tif')||($end=='.jp2')) {
+    if (($end == '.tif') || ($end == '.jp2')) {
       // get basename
-      $xbase=basename($d1,$end);
-      $xmlname=$xbase.'.xml';
-    if (!file_exists($xmlname)) { // create mods file
-      // get title and identifier specific to this image
-      /*
-      * could also pull in a template file here to set known values
-      */
-      $title=$xbase;
-      $ident=$xmlname;
-      // encode entities
-      $title=htmlentities($title,ENT_QUOTES,'UTF-8');
-      $ident=htmlentities($ident,ENT_QUOTES,'UTF-8');
-      // make mods.xml
-      $pagexml=<<<EOL
+      $xbase = basename($d1, $end);
+      $xmlname = $xbase . '.xml';
+      if (!file_exists($xmlname)) { // create mods file
+        // get title and identifier specific to this image
+        /*
+        * could also pull in a template file here to set known values
+        */
+        $title = $xbase;
+        $ident = $xmlname;
+        // encode entities
+        $title = htmlentities($title, ENT_QUOTES, 'UTF-8');
+        $ident = htmlentities($ident, ENT_QUOTES, 'UTF-8');
+        // make mods.xml
+        $pagexml = <<<EOL
 <?xml version="1.0" encoding="UTF-8"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" version="3.5">
   <identifier type="local">$ident</identifier>
@@ -91,18 +93,19 @@ foreach ($dirfiles as $d1) {
   </titleInfo>
 </mods>
 EOL;
-      // switch contexts to fix syntax highlighting
-      ?>
-      <?php
-      print "Writing MODS:  $xmlname\n";
-      file_put_contents($xmlname, $pagexml);
-    } //endif file exists
-    else {
-      print "file: $xmlname  already exists,\n";
-      print "will not overwrite, continuing with next file.";
-    }
-  } //endif is dir
-} //end foreach
+        // switch contexts to fix syntax highlighting
+        ?>
+        <?php
+        print "Writing MODS:  $xmlname\n";
+        file_put_contents($xmlname, $pagexml);
+      } //endif file exists
+      else {
+        print "file: $xmlname  already exists,\n";
+        print "will not overwrite, continuing with next file.";
+      }
+    }//endif .tif|.jp2
+  }//endif is dir
+}//end foreach
 chdir($cwd);
 
 print "*---------------------\n";
