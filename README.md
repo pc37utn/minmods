@@ -3,7 +3,7 @@
 ## Introduction
 Create minimal mods from book/vol directory names to allow quick ingests and later editing of MODS.
 
-Does not overwrite existing files.
+Does not overwrite existing metadata files.
 
 ## Additional
 
@@ -28,4 +28,4 @@ For a book type directory, where the main directory is the collection name/names
 
 ### minimgmods
 
-For the minimgmods script, a directory has a number of image files and this makes MODS records to match teh image file names by using the base file name for the title, identifier and file name of the MODS.
+For the minimgmods script, a directory has a number of image files and this makes MODS records to match the image file names by using the base file name for the title, identifier and file name of the MODS. This also does not overwrite metadata files that are already there.
