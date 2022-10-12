@@ -3,11 +3,11 @@
 /*
  * minimgmods.php
  * 20170301
- * use a list of tif file names to make minimum mods for ingestion
- * result should have a (tif imagefile name).xml which has two fields
+ * use a directory of tif/jp2 file names to make minimum mods for ingestion
+ * result should have a (tif/jp2 imagefile name).xml which has two fields
  * - an identifer with filename in it and a title with filename in it
  * - this will prepare for a islandora_batch drush ingest
- * 20170301
+ * 20201012 - corrected textfor "tif/jp2"
  *
 */
 
