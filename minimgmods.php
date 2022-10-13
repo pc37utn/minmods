@@ -69,6 +69,7 @@ foreach ($dirfiles as $d1) {
   }
   if (!is_dir($d1)) {
     $end = substr($d1, -4);
+    $xmlbase=$xmlname=$title=$ident='';
     if (($end == '.tif') || ($end == '.jp2')) {
       // get basename
       $xbase = basename($d1, $end);
